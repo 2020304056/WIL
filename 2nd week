@@ -90,3 +90,356 @@ Kotlin 문법 종합반 KDT 실무형 Android 앱개발자
 * Fortune 선정 500대 인기 스타트업들에서 사용하고 있다.
 * 이미 많은 기업이 앱을 Kotlin으로 제작했다.
 * Kotlin이 기업의 생산성을 높이고 더욱 양질의 앱 개발을 도와준다.
+
+## 2주차 강의
+
+# 코딩 컨벤션
+
+1) 정의
+* 다른 사람들도 이해하기 쉽게 코드를 작성하는 규칙
+* 프로그래밍 언어마다 상이하다.
+* Coding Convention
+
+2) 규칙
+* 코드의 규칙성이 증가해서 나중에 봐도 쉽게 이해할 수 있다.
+* 유지보수가 용이하다.
+* 효율적인 협업이 가능하다.
+
+# 출력과 입력
+
+# 프로그램의 모든 출력
+
+1) 정의
+* 프로그램에서 다른 장치로 데이터를 전송하는 행위
+* 전문용어로 Output
+
+2) 예시
+* 프로그램의 결과를 모니터로 정보 출력
+* 프로그램에서 스피커로 사운드 출력
+* 프로그램에서 메모장으로 내용 전달
+* 프로그램에서 USB로 내용 전달
+
+# 프로그램의 모든 입력
+
+1) 정의
+* 다른 장치로부터 데이터를 불러와서 프로그램에서 확인하는 행위
+* 전문용어로 Input
+
+2) 예시
+* 키보드에서 입력한 내용을 불러와서 프로그램에서 확인
+* 마이크에서 녹음한 목소리를 불러와서 프로그램에서 확인
+* 메모장의 내용을 불러와서  프로그램에서 확인
+* USB의 파일목록을 불러와서 프로그램에서 확인
+
+# Kotlin의 입력과 출력
+
+1) 모니터에 간단한 정보를 출력
+
+println("안녕하세요")
+println("나는 코틀린이 좋아요")
+print("나는 코틀린으로 앱을 만들거예요")
+println("고마워요!")
+println("굿럭!")
+
+2) 키보드에서 입력한 텍스트를 불러오기
+
+val dataString = readLine()
+println("나는 ${dataString }를 입력했어요!")
+
+3) 키보드에서 입력한 숫자(정수)를 불러오기
+
+val dataNumber = readLine()!!.toInt()
+val sum = dataNumber + 3
+println("입력은 ${dataNumber}인데 3을 더해서 ${sum }이예요!")
+
+## 자료형
+
+1) 정의
+* 프로그램의 모든 정보를 데이터 또는 자료
+* 자료를 저장할 수 있는 적절한 형태를 자료형이라고 한다.
+
+2) 예시
+* 비트는 컴퓨터 메모리를 구성하는 방 한칸
+
+# 자료형이 중요한 이유
+
+1) 제한적인 자원을 효율적으로 사용하기 위해서 중요하다.
+* 컴퓨터의 하드웨어 사양은 제한적
+
+2) 예시
+* 몸무게를 소수점까지 표현해야 하는데 Int로는 할 수 없으니 적절하게 Double을 사용
+* 32비트(Int)로도 충분한데 64비트(Long)에 정수를 저장한 경우(낭비)
+* 8비트(Byte)로도 충분한데 32비트(Int)에 정수를 저장한 경우(낭비)
+
+# 변수는 var(variable) 키워드를 사용한다.
+
+1) 숫자를 나타내는 변수
+
+// var num1:Int = 1
+// var 변수이름:자료형(생략가능) = 값
+// 값을 특정 자료형을 저장할 수 있는 변수이름에 대입한다
+var num1 = 1
+println("내 첫변수 num1 변수에는 ${num1}이 들어있어")
+
+num1 = 5
+println("변경한 변수 num1 변수에는 ${num1}이 들어있어")
+
+2) 문자를 나타내는 변수
+
+// var one1:Char = '김'
+// var 변수이름:타입(생략가능) = 값
+var one1 = '김'
+println("내 첫변수 one1 변수에는 ${one1 }이 들어있어")
+
+one1 = '나' // one1변수에 들어있던 '김' 대신에 '나'를 대입
+println("변경한 변수 one1 변수에는 ${one1}가 들어있어")
+
+3) 문자열을 나타내는 변수
+
+// var name:String = "참새"
+var name = "참새"
+println("새의 이름을 저장하는 name 변수에는 ${name}가 들어있어")
+
+name = "조롱박이" // name변수에 들어있던 "참새" 대신에 "조롱박이"를 대입
+println("변경한 변수 name에는 ${name}가 들어있어")
+
+## 연산자
+
+# 덧셈, 뺄셈, 곱셈, 나눗셈, 그리고 나머지 연산
+
+		var num1 = 30
+    var num2 = 10
+    
+    // 덧셈 연산자(+)사용해서 num1과 num2를 더한후에 plusResult에 대입함
+    var plusResult = num1 + num2
+    println("num1 + num2는 ${plusResult}이야")
+
+    // 뺄셈 연산자(-)사용해서 num1에서 num2를 뺀후에 minusResult에 대입함
+    var minusResult = num1 - num2
+    println("num1 - num2는 ${minusResult}이야")
+
+    // 곱셈 연산자(*)사용해서 num1과 num2를 곱한후에 multipleResult에 대입함
+    var multipleResult = num1 * num2
+    println("num1 * num2는 ${multipleResult}이야")
+
+    // 나눗셈 연산자(/)사용해서 num1에서 num2를 나눈후에 divideResult에 대입함
+    var divideResult = num1 / num2
+    println("num1 / num2는 ${divideResult}이야")
+    
+    // num2를 10에서 7로 변경
+    num2 = 7
+
+    // 나머지 연산자(%)사용해서 num1에서 num2를 나눈 나머지를 modResult에 대입함
+    var modResult = num1 % num2
+    println("num1 % num2는 정수로 ${modResult}야")
+
+# =을 기준으로 오른쪽에 있는 값을 왼쪽의 변수명 또는 상수명에 대입
+
+		// = 기준으로
+    // 오른쪽: "참새"
+    // 왼쪽의 이름: name
+    // 즉, "참새"를 name변수에 대입한다라고 읽을 수 있음
+    var name = "참새"
+    println("내 이름은 ${name}")
+
+    // = 기준으로
+    // 오른쪽: 10
+    // 왼쪽의 이름: age
+    // 즉, 10을 age변수에 대입한다라고 읽을 수 있음
+    val age = 10
+    println("내 나이는 ${age}")
+
+# 산술연산자와 대입연산자를 한번에 사용할 수 있는 연산자
+
+		var num1 = 30
+    var num2 = 10
+
+    // 산술연산자와 대입연산자를 따로 사용
+    // num1의 값을 10 증가시켜서 40을 만들고 싶다면?
+    num1 = num1 + 10
+    println("산술, 대입 따로 적용한 결과 ${num1}")
+
+    // 복합대입연산자를 사용
+    // num2의 값을 10 증가시켜서 20을 만들고 싶다면?
+    num2 += 10
+    println("산술, 대입 따로 적용한 결과 ${num2}")
+    
+    // 뺄셈, 곱셈, 나눗셈, 나머지연산도 동일하게 사용가능해요
+    // 뺄셈: a-=b
+    // 곱셈: a*=b
+    // 나눗셈: a/=b
+    // 나머지: a%=b
+
+# 1을 더하거나 빼는 특수한 경우에 사용할 수 있는 연산자
+
+		var num1 = 30
+    var num2 = 10
+
+    // num1의 값을 1 증가시키고 싶다면?
+
+    // 1) 산술연산자, 대입연산자 따로 사용
+    num1 = num1 + 1
+    println("(num1_1): 산술,대입 연산자 따로 사용해서 1증가 ${num1}")
+
+    // 2) 복합대입연산자 사용
+    num1 += 1
+    println("(num1_2): 복합대입연산자 사용해서 1증가 ${num1}")
+
+    // 3) 증감 연산자
+    num1++
+    println("(num1_3): 증가연산자 사용해서 1증가 ${num1}")
+
+    println("====================================================")
+
+    // num2의 값을 1 감소시키고 싶다면?
+
+    // 1) 산술연산자, 대입연산자 따로 사용
+    num2 = num2 - 1
+    println("(num2_1): 산술,대입 연산자 따로 사용해서 1감소 ${num2}")
+
+    // 2) 복합대입연산자 사용
+    num2 -= 1
+    println("(num2_2): 복합대입연산자 사용해서 1감소 ${num2}")
+
+    // 3) 증감 연산자
+    num2--
+    println("(num2_3): 증가연산자 사용해서 1감소 ${num2}")
+
+# 예시 코드(2)
+
+* 증감연산자는 변수의 왼쪽이나 오른쪽에 위치할 수 있따.
+* 변수의 왼쪽에 위치하면 전위연산자
+* 변수의 오른쪽에 위치하면 후위연산자
+* 단독적으로 사용하면 결과값을 동일
+
+		var num1 = 10
+		var num2 = 20
+    var num3 = 30
+    
+    // 후위연산자는 println연산을 실행후에 증감해요
+    println(num1++)
+    println(num1)
+    
+    // 전위연산자는 println연산 실행전에 증감해요
+    println(++num2)
+    println(num2)
+    
+    num3++
+    println(num3)
+    
+    ++num3
+    println(num3)
+
+# 로직 연산자 = 두 개의 변수 또는 상수의 관계나 값을 비교할때 사용하는 연산자를 의미한다. 
+
+* 결과는 참 또는 거짓이므로 boolean자료형과 함께 사용한다.
+
+* 예시 코드 (1)
+
+		// 수학은 94점
+    var mathScore = 94
+
+    // 수학점수가 90점 초과인지 판단
+    var isMathHighRank = mathScore > 90
+
+    // 90점 초과라면 true (참)
+    // 90점 이하라면 false (거짓)
+    println("내 수학점수는 고등급이 맞나요? ${isMathHighRank}")
+
+* 예시 코드 (2)
+
+		// 영어는 60점
+    var englishScore = 60
+
+    // 국어점수가 60점 이상인지 판단
+    var isEnglishMiddleRank = englishScore >= 60
+
+    // 60점 이상이라면 true (참)
+    // 60점 미만이라면 false (거짓)
+    println("내 영어점수는 턱걸이로 중위권이 맞나요? ${isEnglishMiddleRank}")
+
+* 예시 코드 (3)
+
+		var baseAge = 20
+    var myAge = 20
+    var teacherAge = 50
+    var babyAge = 7
+
+    var isMyAgePass = myAge == baseAge
+    var isTeacherAgePass = teacherAge == baseAge
+    var isBabyAgeNoPass = babyAge != baseAge
+
+    println("어서오세요~")
+    println("이번 이벤트는 ${baseAge}살만 참여할 수 있습니다!")
+
+    println("================신분증 검사중================")
+
+    println("내 나이는 ${myAge}니까 ${isMyAgePass}다!")
+    println("선생님 연세는 ${teacherAge}니까 ${isTeacherAgePass}네요.. 미안해요!")
+    println("${babyAge}살은 참여할수 없는게 맞아요! ${isBabyAgeNoPass}")
+
+
+## 조건식
+
+* Kotlin에서는 if, else, when 키워드를 활용해서 조건을 관리
+
+* if-else의 구조
+
+// 조건식은 앞서배운 비교 연산자를 사용합니다
+// 즉, 조건식 자리에는 true 또는 false의 결과가 들어갑니다
+// 조건식이 true일때 중괄호 안의 코드를 실행합니다
+if(조건식) {
+	 // 실행할 코드
+}
+
+
+// 둘 중 한개의 코드만 실행됩니다
+if(조건식) {
+	// 조건식이 true일때 실행할 코드
+} else {
+  // 조건식이 false일때 실행할 코드
+}
+
+* when의 구조
+
+// 조건식은 앞서배운 비교 연산자를 사용합니다
+// 즉, 조건식 자리에는 true 또는 false의 결과가 들어갑니다
+// 조건식이 true일때 중괄호 안의 코드를 실행합니다
+if(조건식) {
+	 // 실행할 코드
+}
+
+
+// 둘 중 한개의 코드만 실행됩니다
+if(조건식) {
+	// 조건식이 true일때 실행할 코드
+} else {
+  // 조건식이 false일때 실행할 코드
+}
+
+## 반복문의 사용
+
+* for의 구조
+
+// 코틀린의 for 반복문은 다양한 형태가 존재합니다.
+
+// 리스트(묶음)에서 하나의 요소들을 반복해서 가져오는 경우입니다
+for(요소 in 리스트) {
+	  소스코드 (로직)
+}
+
+// 숫자의 범위를 기준으로 반복하는 경우입니다
+// 시작값이 0이고, 마지막값이 5라면 인덱스는 0,1,2,3,4이므로 총 5번 반복해요
+// until을 생략해서 시작값..마지막값으로 사용할수도 있어요
+for(인덱스 in 시작값 until 마지막값) {
+		소스코드 (로직)
+}
+
+* while의 구조
+
+// 코틀린의 while 반복문은 조건식, 증감식을 이용합니다
+
+while(조건식) {
+		소스코드 (로직)
+		증감식
+}
